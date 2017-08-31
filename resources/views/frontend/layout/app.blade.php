@@ -67,7 +67,7 @@
         </style>
     </head>
     <body>
-    <div style="position: relative;width: 800px;margin-left: auto;margin-right: auto;background-color: whitesmoke">
+    <div style="position: relative;width: 1200px;margin-left: auto;margin-right: auto;background-color: whitesmoke">
         <div class="container">
             @yield('content')
             <div style="clear: both;height: 30px"></div>
