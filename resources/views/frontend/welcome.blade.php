@@ -47,7 +47,8 @@
         <div class="container">
             <div class="top_part">
                 <div style="float: left">IDoctor</div>
-                <div style="float: left;margin-left: 20px">点击注册</div>
+                <div style="float: left;margin-left: 20px" onclick="show_register()">点击注册</div>
+                <div style="float: left;margin-left: 20px" onclick="show_login()">登录</div>
                 <div style="float: right">GO</div>
             </div>
             <div style="clear: both"></div>
@@ -60,16 +61,41 @@
                 <div class="nav_item" data-des="rehabilitation" onclick="nav_it(this)">复健理疗</div>
                 <div class="nav_item" data-des="expert" onclick="nav_it(this)">国际顶尖医学专家</div>
                 <div class="nav_item" data-des="remote" onclick="nav_it(this)">远程会诊</div>
-                <div class="nav_item" data-des="contact" onclick="nav_it(this)">联系我们</div>
+                <div class="nav_item" data-des="contact" onclick="show_contact(this)">联系我们</div>
             </div>
         </div>
     </div>
+    @include("frontend.modal.modal_register")
+    @include("frontend.modal.modal_login")
+    @include("frontend.modal.modal_contact")
     </body>
     <script src="{{ asset ("/assets/js/app.js") }}" type="text/javascript"></script>
     <script>
         function nav_it(self){
             var src = $(self).attr("data-des");
             window.location = '{{URL::to("")}}'+ "/" + src;
+        }
+        function show_register(){
+            $('#register').modal("show");
+        }
+        function show_login(){
+            $('#login').modal("show");
+        }
+        function show_contact(self){
+            $('#contact').modal("show");
+        }
+        function register(self){
+            $('#register').modal("hide");
+        }
+        function login(self){
+            $('#login').modal("hide");
+        }
+        function switch_register(self){
+            $('#login').modal("hide");
+            $('#register').modal("show");
+        }
+        function send_question(self){
+            $('#contact').modal("hide");
         }
     </script>
 </html>

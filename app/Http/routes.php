@@ -22,3 +22,5 @@ Route::get('/rehabilitation', 'Backend\DoctorController@rehabilitation');
 Route::get('/expert', 'Backend\DoctorController@expert');
 Route::get('/contact', 'Backend\DoctorController@contact');
 Route::get('/remote', 'Backend\DoctorController@remote');
+Route::get('/partner', 'Backend\DoctorController@partner');
+Route::get('/prevention', 'Backend\DoctorController@prevention');

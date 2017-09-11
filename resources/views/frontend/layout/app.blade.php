@@ -55,6 +55,12 @@
                 cursor: pointer;
                 position: relative;
             }
+            .nav_item_selected{
+                padding: 12px;
+                cursor: pointer;
+                position: relative;
+                font-weight: bolder;
+            }
             .nav_item:hover{
                 color: rgb(120,188,197);
             }
@@ -79,24 +85,65 @@
                 <div class="nav_item" data-des="rehabilitation" onclick="nav_it(this)">复健理疗</div>
                 <div class="nav_item" data-des="remote" onclick="nav_it(this)">远程会诊</div>
                 <div class="nav_item" data-des="expert" onclick="nav_it(this)">国际顶尖医学专家</div>
-                <div class="nav_item" data-des="" onclick="nav_it(this)">合作伙伴</div>
+                <div class="nav_item" data-des="partner" onclick="nav_it(this)">合作伙伴</div>
                 <div class="nav_item" data-des="beauty" onclick="nav_it(this)">医疗美容(活细胞)</div>
-                <div class="nav_item" data-des="" onclick="nav_it(this)">预防医学</div>
+                <div class="nav_item" data-des="prevention" onclick="nav_it(this)">预防医学</div>
                 <div class="nav_item" data-des="escort" onclick="nav_it(this)">跨境医疗及陪护</div>
                 <div class="nav_item" data-des="treatment" onclick="nav_it(this)">重大疾病治疗</div>
-                <div class="nav_item" data-des="contact" onclick="nav_it(this)">联系我们</div>
+                <div class="nav_item" data-des="contact" onclick="show_contact(this)">联系我们</div>
             </div>
         </div>
 
 
         <div style="clear: both"></div>
     </div>
+    @include("frontend.modal.modal_register")
+    @include("frontend.modal.modal_login")
+    @include("frontend.modal.modal_contact")
     </body>
     <script src="{{ asset ("/assets/js/app.js") }}" type="text/javascript"></script>
     <script>
+        $( document ).ready(function() {
+            set_nav();
+        });
+        function set_nav(){
+            var pathname = window.location.pathname;
+            console.log(pathname);
+            $('.nav_item').each(function(i, obj) {
+                var t = "/" + $(obj).attr("data-des");
+                if(t == pathname){
+                    $(obj).css("color","#78bcc5");
+                    return false;
+                }
+            });
+        }
+
+
         function nav_it(self){
             var src = $(self).attr("data-des");
             window.location = '{{URL::to("")}}'+ "/" + src;
+        }
+        function show_register(){
+            $('#register').modal("show");
+        }
+        function show_login(){
+            $('#login').modal("show");
+        }
+        function show_contact(self){
+            $('#contact').modal("show");
+        }
+        function register(self){
+            $('#register').modal("hide");
+        }
+        function login(self){
+            $('#login').modal("hide");
+        }
+        function switch_register(self){
+            $('#login').modal("hide");
+            $('#register').modal("show");
+        }
+        function send_question(self){
+            $('#contact').modal("hide");
         }
     </script>
 </html>
