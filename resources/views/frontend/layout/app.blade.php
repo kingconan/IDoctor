@@ -68,7 +68,12 @@
                 top: 0;
             }
 
-
+            .nav_img{
+                width: 150px;
+                height: 150px;
+                position: absolute;
+                cursor: pointer;
+            }
 
         </style>
     </head>
@@ -80,17 +85,46 @@
         </div>
         <div class="sidebar" id="sidebar">
             <div data-spy="affix" data-offset-top="30">
-                <div class="nav_item" data-des="about" onclick="nav_it(this)">ABOUT US</div>
-                <div class="nav_item" data-des="examination" onclick="nav_it(this)">定制体验</div>
-                <div class="nav_item" data-des="rehabilitation" onclick="nav_it(this)">复健理疗</div>
-                <div class="nav_item" data-des="remote" onclick="nav_it(this)">远程会诊</div>
-                <div class="nav_item" data-des="expert" onclick="nav_it(this)">国际顶尖医学专家</div>
-                <div class="nav_item" data-des="partner" onclick="nav_it(this)">合作伙伴</div>
-                <div class="nav_item" data-des="beauty" onclick="nav_it(this)">医疗美容(活细胞)</div>
-                <div class="nav_item" data-des="prevention" onclick="nav_it(this)">预防医学</div>
-                <div class="nav_item" data-des="escort" onclick="nav_it(this)">跨境医疗及陪护</div>
-                <div class="nav_item" data-des="treatment" onclick="nav_it(this)">重大疾病治疗</div>
-                <div class="nav_item" data-des="contact" onclick="show_contact(this)">联系我们</div>
+                <div style="position: relative">
+                    <div>
+                        <img style="left:0;top: 0;"  data-des="about" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_about.png')}}"/>
+                        <img style="left:0;top: 60px;" data-des="examination" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_examination.png')}}"/>
+                        <img style="left:0;top: 128px;" data-des="rehabilitation" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_rehabilitation.png')}}"/>
+                        <img style="left:0;top: 195px;" data-des="remote" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_remote.png')}}"/>
+                        <img style="left:0;top: 275px;" data-des="expert" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_expert.png')}}"/>
+                        <img style="left:0;top: 325px;" data-des="partner" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_partner.png')}}"/>
+
+                        <img style="left:60px;top: 0px;" data-des="beauty" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_beauty.png')}}"/>
+                        <img style="left:60px;top: 60px;" data-des="prevention" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_prevention.png')}}"/>
+                        <img style="left:60px;top: 120px;" data-des="escort" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_escort.png')}}"/>
+                        <img style="left:60px;top: 180px;" data-des="treatment" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_treatment.png')}}"/>
+                        <img style="left:60px;top: 240px;" data-des="contact" onclick="nav_it(this)"
+                             class="nav_img" src="{{URL::to('images/icon_contact.png')}}"/>
+                    </div>
+                </div>
+                {{--<div class="nav_item" data-des="about" onclick="nav_it(this)">ABOUT US</div>--}}
+                {{--<div class="nav_item" data-des="examination" onclick="nav_it(this)">定制体验</div>--}}
+                {{--<div class="nav_item" data-des="rehabilitation" onclick="nav_it(this)">复健理疗</div>--}}
+                {{--<div class="nav_item" data-des="remote" onclick="nav_it(this)">远程会诊</div>--}}
+                {{--<div class="nav_item" data-des="expert" onclick="nav_it(this)">国际顶尖医学专家</div>--}}
+                {{--<div class="nav_item" data-des="partner" onclick="nav_it(this)">合作伙伴</div>--}}
+
+
+                {{--<div class="nav_item" data-des="beauty" onclick="nav_it(this)">医疗美容(活细胞)</div>--}}
+                {{--<div class="nav_item" data-des="prevention" onclick="nav_it(this)">预防医学</div>--}}
+                {{--<div class="nav_item" data-des="escort" onclick="nav_it(this)">跨境医疗及陪护</div>--}}
+                {{--<div class="nav_item" data-des="treatment" onclick="nav_it(this)">重大疾病治疗</div>--}}
+                {{--<div class="nav_item" data-des="contact" onclick="show_contact(this)">联系我们</div>--}}
             </div>
         </div>
 
